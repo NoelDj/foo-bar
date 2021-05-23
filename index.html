@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foo Bar</title>
+</head>
+
+<body>
+
+
+  <div id="app">
+
+    <header>
+      <h1>Menu</h1>
+    </header>
+
+    <main class="menu">
+      <section>
+        <template>
+          <article>
+            <img alt="">
+            <div class="text">
+              <h2 class="name">{item.name}</h2>
+              <p class="description">{item.description.aroma}</p>
+              <button>Add Order </button>
+            </div>
+          </article>
+        </template>
+      </section>
+    </main>
+
+    <footer>
+      <nav id="orders">
+        <ul id="ordered-items">
+        </ul>
+        <div id="checkout">
+          <p>Subtotal: <span id="price">0</span> DKK</p>
+          <a href="checkout.html">CHECKOUT</a>
+        </div>
+      </nav>
+    </footer>
+
+    <div class="overlay">
+      <section class="modal">
+        <div class="close">X</div>
+        <div class="container">
+            <div class="slide sizes">
+              <div class="wrapper" id="sizes">
+              <article>
+                <img src="/beer.png" alt="">
+                <p>0.5</p>
+              </article>
+              <article class="transparent">
+                <img src="/beer.png" alt="">
+                <p>0.75</p>
+              </article>
+              <article class="transparent">
+                <img src="/beer.png" alt="">
+                <p>1</p>
+              </article>
+              <div class="move" data-slide="next">🠒</div>
+            </div>
+            </div><!-- This comment removes the line break
+             --><div class="slide variant">
+              <div class="wrapper" id="variant">
+
+
+              <div class="move" data-slide="previous">🠐</div>
+
+              <article data-container='bottle'>
+                <img src="/beer.png" alt="">
+                <p>Bottle</p>
+              </article>
+
+              <p>OR</p>
+
+              <article data-container='pint'>
+                <img src="/beer.png" alt="">
+                <p>Pint</p>
+              </article>
+
+            </div>
+            </div>
+
+        </div>
+      </section>
+    </div>
+
+  </div>
+
+
+
+
+
+  <script type="module" src="/main.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>

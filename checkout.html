@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foo Bar</title>
+</head>
+
+<body>
+
+
+    <div id="app">
+
+        <header>
+            <h1>Checkout</h1>
+        </header>
+
+
+
+        <main class="checkout">
+            <section>
+
+            </section>
+            <a href="/">Back</a>
+        </main>
+
+        <template>
+            <article>
+                <div class="img-box">
+                    <img src="" alt="">
+                </div>
+                <div class="info-box">
+                    <p class="name"></p>
+                    <div class="amount">
+                        <button data-action="decrease">-</button>
+                        <span class="orders"></span>
+                        <button data-action="increase">+</button>
+                    </div>
+                </div>
+                <p class="price"></p>
+
+                <button class="remove">Remove</button>
+            </article>
+        </template>
+
+
+        <footer>
+            <nav id="orders">
+                <p class="total">0</p>
+                <a href="">Pay</a>
+            </nav>
+        </footer>
+
+
+
+    </div>
+
+
+
+
+
+    <script type="module" src="/main.js"></script>
+    <script src="checkout.js"></script>
+</body>
+
+</html>
