@@ -28,12 +28,16 @@ body {
             }
         }
 
-        #start {
+        .start {
             height: calc(100vh - 20vh);
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            text-align: center;
+            img {
+                width: 200px;
+            }
         }
 
         .menu {

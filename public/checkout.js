@@ -60,7 +60,9 @@ function appendProducts(product) {
 
             document.querySelector('main section').innerHTML = ''
             orderedItems.forEach(appendProducts);
+
             setPrice(orderedItems)
+            localStorage.setItem("items", JSON.stringify(orderedItems));
 
         })
     })
