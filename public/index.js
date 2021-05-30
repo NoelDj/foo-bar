@@ -72,23 +72,25 @@ function appendProducts(product) {
     document.querySelector("#testing").textContent = product.name;
   });
 
-  document.querySelector(".menu").appendChild(copy);
+  document.querySelector(".menu #bottles").appendChild(copy);
 }
 
 function showModal(product) {
   document.querySelector(".overlay").style.display = "flex";
 
-  // document.querySelector("#addglass").addEventListener("click", (e) => {
-  //   const value = e.target.parentElement.dataset.container;
-  //   product.container = value;
-  //   console.log(product);
-  //   check(product);
-  // });
   document.querySelector("#addbottle").addEventListener("click", (e) => {
     addBottle(e);
   });
 
   function addBottle(e) {
+    const value = e.target.parentElement.dataset.container;
+    product.container = value;
+    console.log(product);
+    check(product);
+
+    // console.log(product.name);
+  }
+  function addGlass(e) {
     const value = e.target.parentElement.dataset.container;
     product.container = value;
     console.log(product);

@@ -14,10 +14,25 @@
 
     <header>
       <h1>Menu</h1>
+      <p>Add beer types on this page, then proceed to checkout to choose the amount</p>
     </header>
 
     <main class="menu">
-      <section>
+      <section id="bottles">
+        <h1>Bottles</h1>
+        <template>
+          <article>
+            <img alt="">
+            <div class="text">
+              <h2 class="name">{item.name}</h2>
+              <p class="description">{item.description.aroma}</p>
+              <button>Add Order </button>
+            </div>
+          </article>
+        </template>
+      </section>
+      <section id="taps">
+        <h1> Taps</h1>
         <template>
           <article>
             <img alt="">
