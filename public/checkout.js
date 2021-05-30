@@ -45,20 +45,23 @@ function loadBeerStock() {
 function beerStocks(jsonData) {
   console.log(jsonData.storage);
   console.log(jsonData.taps);
-  elhefebottle = jsonData.storage[0].amount;
-  fairytalealebottle = jsonData.storage[1].amount;
-  githopbottle = jsonData.storage[2].amount;
-  hollabackbottle = jsonData.storage[3].amount;
-  hoppilyeverafterbottle = jsonData.storage[4].amount;
-  mowintimebottle = jsonData.storage[5].amount;
-  row26bottle = jsonData.storage[6].amount;
-  ruinedchildhoodbottle = jsonData.storage[7].amount;
-  sleighridebottle = jsonData.storage[8].amount;
-  steampunkbottle = jsonData.storage[9].amount;
-  sleighridekeg = jsonData.taps[0].level + jsonData.taps[4].level;
-  steampunkkeg = jsonData.taps[1].level + jsonData.taps[5].level;
-  hollabackkeg = jsonData.taps[2].level + jsonData.taps[6].level;
-  row26keg = jsonData.taps[3].level;
+  elhefebottle = jsonData.storage[0].amount - 1;
+  fairytalealebottle = jsonData.storage[1].amount - 1;
+  githopbottle = jsonData.storage[2].amount - 1;
+  hollabackbottle = jsonData.storage[3].amount - 1;
+  hoppilyeverafterbottle = jsonData.storage[4].amount - 1;
+  mowintimebottle = jsonData.storage[5].amount - 1;
+  row26bottle = jsonData.storage[6].amount - 1;
+  ruinedchildhoodbottle = jsonData.storage[7].amount - 1;
+  sleighridebottle = jsonData.storage[8].amount - 1;
+  steampunkbottle = jsonData.storage[9].amount - 1;
+  mowintimekeg = jsonData.taps[0].level;
+  row26keg = jsonData.taps[1].level;
+  hoppilyeverafterkeg = jsonData.taps[2].level;
+  sleighridekeg = jsonData.taps[3].level;
+  ruinedchildhoodkeg = jsonData.taps[4].level;
+  githopkeg = jsonData.taps[5].level;
+  hollabackkeg = jsonData.taps[6].level;
 }
 
 function loadData() {
@@ -227,10 +230,28 @@ function appendProducts(product) {
             );
           }
         }
-      } else {
+      } else if (product.amount > 1) {
         product.amount--;
-        if (product.amount == 0) {
-          product.amount = 1;
+        if (product.name === "El Hefe") {
+          elhefebottle += 1;
+        } else if (product.name === "Fairy Tale Ale") {
+          fairytalealebottle += 1;
+        } else if (product.name === "GitHop") {
+          githopbottle += 1;
+        } else if (product.name === "Hollaback Lager") {
+          hollabackbottle += 1;
+        } else if (product.name === "Hoppily Ever After") {
+          hoppilyeverafterbottle += 1;
+        } else if (product.name === "Mowintime") {
+          mowintimebottle += 1;
+        } else if (product.name === "Row 26") {
+          row26bottle += 1;
+        } else if (product.name === "Ruined Childhood") {
+          ruinedchildhoodbottle += 1;
+        } else if (product.name === "Sleighride") {
+          sleighridebottle += 1;
+        } else if (product.name === "Steampunk") {
+          steampunkbottle += 1;
         }
       }
 
