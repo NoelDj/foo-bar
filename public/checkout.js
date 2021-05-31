@@ -10,16 +10,6 @@ let row26bottle = 0;
 let ruinedchildhoodbottle = 0;
 let sleighridebottle = 0;
 let steampunkbottle = 0;
-let elhefekeg = 0;
-let fairytalealekeg = 0;
-let githopkeg = 0;
-let hollabackkeg = 0;
-let hoppilyeverafterkeg = 0;
-let mowintimekeg = 0;
-let row26keg = 0;
-let ruinedchildhoodkeg = 0;
-let sleighridekeg = 0;
-let steampunkkeg = 0;
 
 window.addEventListener("DOMContentLoaded", init);
 
@@ -55,13 +45,6 @@ function beerStocks(jsonData) {
   ruinedchildhoodbottle = jsonData.storage[7].amount - 1;
   sleighridebottle = jsonData.storage[8].amount - 1;
   steampunkbottle = jsonData.storage[9].amount - 1;
-  mowintimekeg = jsonData.taps[0].level;
-  row26keg = jsonData.taps[1].level;
-  hoppilyeverafterkeg = jsonData.taps[2].level;
-  sleighridekeg = jsonData.taps[3].level;
-  ruinedchildhoodkeg = jsonData.taps[4].level;
-  githopkeg = jsonData.taps[5].level;
-  hollabackkeg = jsonData.taps[6].level;
 }
 
 function loadData() {

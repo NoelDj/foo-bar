@@ -19,8 +19,8 @@
 
     <main class="menu">
       <section id="bottles">
-        <h1>Bottles</h1>
-        <template>
+        <!-- <h1>Bottles</h1> -->
+        <template id="bottletemplate">
           <article>
             <img alt="">
             <div class="text">
@@ -32,14 +32,12 @@
         </template>
       </section>
       <section id="taps">
-        <h1> Taps</h1>
-        <template>
-          <article>
+        <!-- <h1> Taps</h1> -->
+        <template id="taptemplate"><article>
             <img alt="">
             <div class="text">
               <h2 class="name">{item.name}</h2>
-              <p class="description">{item.description.aroma}</p>
-              <button>Add Order </button>
+              <button class="addtap">Add Order </button>
             </div>
           </article>
         </template>
@@ -66,13 +64,13 @@
 <p id="testing"></p>
                 <article id="addbottle" data-container='bottle'>
                   <img src="/beer.png" alt="">
-                  <p>Bottle</p>
+                  <p>Add to order</p>
                 </article>
-                <p>OR</p>
+                <!-- <p>OR</p>
                 <article id="addglass" data-container='pint'>
                   <img src="/beer.png" alt="">
                   <p>Tap</p>
-                </article>
+                </article> -->
             </div>
             </div><!-- This comment removes the line break
              -->

@@ -9,10 +9,47 @@ function init() {
   loadData();
   selectDomElements();
   previousOrders();
+  // loadTaps();
 }
 
 function handleBeerData(data) {
   console.log(data);
+}
+
+// function loadTaps() {
+//   fetch("https://foobarexamproject.herokuapp.com/")
+//     .then((response) => response.json())
+//     .then((jsonData) => {
+//       beerStocks(jsonData);
+//     });
+// }
+// function beerStocks(jsonData) {
+//   console.log(jsonData.taps);
+//   let kegsarray = jsonData.taps;
+//   kegsarray.forEach((product) => appendkeg(product));
+// }
+
+// function appendkeg(product) {
+//   const copy = document.querySelector("#taptemplate").content.cloneNode(true);
+//   // console.log(copy);
+//   copy.querySelector(".name").textContent = product.beer;
+//   copy.querySelector("img").src = "/images/" + product.beer;
+//   document.querySelector(".menu #taps").appendChild(copy);
+//   document.querySelectorAll(".addtap").forEach((item) => {
+//     item.addEventListener("click", (event) => {
+//       addGlass(e);
+//     });
+//   });
+// }
+
+function addGlass(e) {
+  console.log("tap beer addeddddd");
+  const value = e.target.parentElement.dataset.container;
+  product.container = value;
+  console.log(product);
+  check(product);
+
+  // console.log(product.name);
 }
 
 function previousOrders() {
@@ -36,6 +73,7 @@ function handleData(data) {
 }
 
 function prepareObjects(objects) {
+  console.log(objects);
   const mapped = objects.map(handleObject);
   mapped.forEach(appendProducts);
 }
@@ -58,7 +96,9 @@ function handleObject(object) {
 }
 
 function appendProducts(product) {
-  const copy = document.querySelector("template").content.cloneNode(true);
+  const copy = document
+    .querySelector("#bottletemplate")
+    .content.cloneNode(true);
   // console.log(copy);
   copy.querySelector(".name").textContent = product.name;
 
@@ -71,26 +111,16 @@ function appendProducts(product) {
     showModal(product);
     document.querySelector("#testing").textContent = product.name;
   });
-
   document.querySelector(".menu #bottles").appendChild(copy);
 }
 
 function showModal(product) {
   document.querySelector(".overlay").style.display = "flex";
-
   document.querySelector("#addbottle").addEventListener("click", (e) => {
     addBottle(e);
   });
 
   function addBottle(e) {
-    const value = e.target.parentElement.dataset.container;
-    product.container = value;
-    console.log(product);
-    check(product);
-
-    // console.log(product.name);
-  }
-  function addGlass(e) {
     const value = e.target.parentElement.dataset.container;
     product.container = value;
     console.log(product);
