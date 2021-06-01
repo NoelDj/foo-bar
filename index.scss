@@ -1,17 +1,23 @@
-$width: 600px;
+@font-face {
+    font-family: Yorktown;
+    src: url(/Yorktown.ttf);
+}
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap");
+$width: 600px;
 
 body {
     margin: 0;
+    font-family: Yorktown;
 
     @mixin tablet {
-        @media only screen and (min-width:800px) {
+        @media only screen and (min-width: 800px) {
             @content;
         }
     }
 
     #app {
-        background: skyblue;
+        background: #f1ebe3;
         padding: 10vh 2em;
 
         section,
@@ -24,7 +30,9 @@ body {
             text-align: center;
 
             h1 {
-                font-size: 2rem;
+                font-size: 3rem;
+                font-family: Yorktown;
+                font-weight: 200;
             }
         }
 
@@ -43,11 +51,13 @@ body {
         .menu {
             max-width: $width;
             margin: auto;
+            margin-bottom: 5rem;
 
             article {
-                background: rgba($color: #fff, $alpha: .5);
+                background: rgba($color: #9e7644, $alpha: 0.5);
                 padding: 1em;
                 margin-bottom: 1em;
+                border-radius: 5px;
                 display: flex;
                 flex-direction: column;
 
@@ -60,11 +70,30 @@ body {
 
                 .text {
                     padding: 0 1em;
+                    font-family: "Montserrat Alternates", sans-serif;
+                    color: #fff;
 
                     h2 {
                         margin: 0;
                         padding: 0;
                         font-size: 2rem;
+                        font-family: Yorktown;
+                        font-weight: 200;
+                    }
+                    button {
+                        width: 6rem;
+                        height: 2rem;
+                        background-color: #403d3a;
+                        color: #fff;
+                        font-family: Yorktown;
+                        font-size: 1rem;
+                        border: none;
+                        border-radius: 10px;
+                    }
+
+                    button:hover {
+                        cursor: pointer;
+                        transform: scale(1.1);
                     }
                 }
 
@@ -75,17 +104,16 @@ body {
                         flex-direction: row-reverse;
                     }
                 }
-
             }
         }
 
-        .checkout{
+        .checkout {
             max-width: $width;
             margin: auto;
             min-height: 100vh;
 
             article {
-                background: rgba($color: #fff, $alpha: .5);
+                background: rgba($color: #fff, $alpha: 0.5);
                 padding: 1em;
                 margin-bottom: 1em;
                 display: flex;
@@ -93,19 +121,15 @@ body {
                 align-items: center;
                 justify-content: space-between;
 
-                    img {
-                        object-fit: contain;
-                        padding: 1em;
-                        height: 50px;
-                        width: 50px;
-                        object-fit: cover;
-                    }
-
-
+                img {
+                    object-fit: contain;
+                    padding: 1em;
+                    height: 50px;
+                    width: 50px;
+                    object-fit: cover;
+                }
             }
         }
-
-
 
         footer {
             nav {
@@ -138,6 +162,28 @@ body {
 
             button {
                 margin-left: 2em;
+                width: 6rem;
+                height: 2rem;
+                background-color: #403d3a;
+                color: #fff;
+                font-family: Yorktown;
+                font-size: 1rem;
+                border: none;
+                border-radius: 10px;
+                text-decoration: none;
+            }
+
+            button:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            a:visited {
+                color: #fff;
             }
         }
 
@@ -176,13 +222,10 @@ body {
                     z-index: 33;
                 }
 
-
-
-
                 .container {
                     transition: 1s;
                     .transparent {
-                        opacity: .5;
+                        opacity: 0.5;
                     }
                     .slide {
                         display: inline-block;
@@ -197,13 +240,8 @@ body {
                             gap: 1em;
                         }
                     }
-
-
-
                 }
-
             }
         }
-
     }
 }
