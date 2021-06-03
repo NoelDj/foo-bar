@@ -109,7 +109,7 @@ function appendProducts(product) {
 
   copy.querySelector("button").addEventListener("click", () => {
     showModal(product);
-    document.querySelector("#testing").textContent = product.name;
+    // document.querySelector("#testing").textContent = product.name;
   });
   document.querySelector(".menu #bottles").appendChild(copy);
 }
