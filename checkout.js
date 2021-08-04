@@ -13,7 +13,7 @@ let steampunkbottle = 0;
 
 window.addEventListener("DOMContentLoaded", init);
 
-const orderedItems = [];
+let orderedItems = [];
 function init() {
   loadData();
   selectDomElements();
