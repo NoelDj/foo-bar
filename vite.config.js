@@ -6,7 +6,7 @@ base: "./",
   build: {
     rollupOptions: {
       input: {
-        cart: resolve(__dirname, 'card.html'),
+        card: resolve(__dirname, 'card.html'),
         checkout: resolve(__dirname, 'checkout.html'),
         completed: resolve(__dirname, 'completed.html'),
         main: resolve(__dirname, 'index.html'),

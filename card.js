@@ -1,5 +1,7 @@
 "use strict";
 
+document.querySelector("#submit-button").addEventListener('click', validateForm)
+
 function validateForm() {
   var creditcardnumber = document.querySelector("#cardNumber").value;
   var securitycode = document.querySelector("#securityCode").value;

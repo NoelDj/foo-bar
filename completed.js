@@ -1,58 +1,11 @@
 "use strict";
 
-window.addEventListener("DOMContentLoaded", init);
+window.addEventListener("DOMContentLoaded", createOrderNumber);
 
-const listOfOrders = [];
+function createOrderNumber() {
 
-function init() {
-  loadOrders();
-  getOrders();
-}
+  const orderNumber = Math.floor(Math.random() * 100)
 
-function loadOrders() {
-  const data = JSON.parse(localStorage.getItem("items"));
+  document.querySelector('#order-number').textContent = orderNumber;
 
-  handleOrders(data);
-}
-
-function handleOrders(data) {
-  data.forEach(createOrder);
-
-  sendOrders();
-}
-
-function createOrder(element) {
-  const order = [
-    {
-      name: element.name,
-      amount: element.amount,
-    },
-  ];
-
-  listOfOrders.push(...order);
-}
-
-function sendOrders() {
-  const postData = JSON.stringify(listOfOrders);
-  console.log(postData);
-
-  fetch("https://foobardata.herokuapp.com/order", {
-    method: "post",
-    body: postData,
-    headers: {
-      "Content-Type": "application/json; charset=utf-8",
-    },
-  })
-    .then((res) => res.json())
-    .then((dataPost) => {
-      console.log(dataPost);
-      console.log(dataPost.id);
-      document.querySelector("#ordernumber > span").textContent = dataPost.id;
-    });
-}
-
-function getOrders() {
-  fetch("https://foobardata.herokuapp.com/")
-    .then((r) => r.json())
-    .then((data) => console.log(data));
 }
