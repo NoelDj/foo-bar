@@ -16,31 +16,6 @@ function handleBeerData(data) {
   console.log(data);
 }
 
-// function loadTaps() {
-//   fetch("https://foobarexamproject.herokuapp.com/")
-//     .then((response) => response.json())
-//     .then((jsonData) => {
-//       beerStocks(jsonData);
-//     });
-// }
-// function beerStocks(jsonData) {
-//   console.log(jsonData.taps);
-//   let kegsarray = jsonData.taps;
-//   kegsarray.forEach((product) => appendkeg(product));
-// }
-
-// function appendkeg(product) {
-//   const copy = document.querySelector("#taptemplate").content.cloneNode(true);
-//   // console.log(copy);
-//   copy.querySelector(".name").textContent = product.beer;
-//   copy.querySelector("img").src = "/images/" + product.beer;
-//   document.querySelector(".menu #taps").appendChild(copy);
-//   document.querySelectorAll(".addtap").forEach((item) => {
-//     item.addEventListener("click", (event) => {
-//       addGlass(e);
-//     });
-//   });
-// }
 
 function addGlass(e) {
   console.log("tap beer addeddddd");
@@ -105,7 +80,7 @@ function appendProducts(product) {
   copy.querySelector(".description").textContent =
     product.description.appearance;
 
-  copy.querySelector("img").src = "/images/beers/" + product.label;
+  copy.querySelector("img").src = "/images/beers-compressed/" + product.label;
 
   copy.querySelector("button").addEventListener("click", () => {
     showModal(product);
@@ -151,7 +126,7 @@ function addItem(item) {
   listItem.id = item.name;
 
   const img = document.createElement("img");
-  img.src = "/images/beers/" + item.label;
+  img.src = "/images/beers-compressed/" + item.label;
   listItem.appendChild(img);
 
   document.querySelector("#ordered-items").appendChild(listItem);

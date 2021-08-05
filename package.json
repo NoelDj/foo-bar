@@ -10,6 +10,7 @@
     "sass": "^1.34.0"
   },
   "dependencies": {
+    "cleave.js": "^1.6.0",
     "vite": "^2.4.4"
   }
 }

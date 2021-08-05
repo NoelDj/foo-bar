@@ -1,6 +1,26 @@
 "use strict";
+import Cleave from 'cleave.js';
 
-document.querySelector("#submit-button").addEventListener('click', validateForm)
+var cleave = new Cleave('#cardNumber', {
+  creditCard: true,
+  delimiter: ' ',
+  blocks: [4, 4, 4, 4],
+  onCreditCardTypeChanged: function (type) {
+      // update UI ...
+  }
+});
+
+var cleave = new Cleave('#date', {
+  date: true,
+  datePattern: ['m', 'y']
+});
+
+var cleave = new Cleave('#security-code', {
+  blocks: [4]
+});
+
+
+/* document.querySelector("#submit-button").addEventListener('click', validateForm)
 
 function validateForm() {
   var creditcardnumber = document.querySelector("#cardNumber").value;
@@ -27,3 +47,4 @@ function validateForm() {
     window.location.href = "/completed.html";
   }
 }
+ */
