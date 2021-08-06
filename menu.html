@@ -13,9 +13,9 @@
   <div id="app">
 
     <header>
-      <img src="/images/malt-icon.png">
+      <img src="/images/decorations/malt-icon.png">
       <h1>Menu</h1>
-      <p>Add beer types on this page, then proceed to checkout to choose the amount.</p>
+      <p>Add beer types on this page <br> then proceed to checkout to choose the amount.</p>
     </header>
 
     <main class="menu">
@@ -52,47 +52,13 @@
         </ul>
         <div id="checkout">
           <p>Subtotal: <span id="price">0</span> DKK</p>
-          <button><a href="/checkout.html">CHECKOUT</a></button>
+          <br>
+          <a href="/checkout.html">CHECKOUT</a>
         </div>
       </nav>
     </footer>
 
-    <div class="overlay">
-      <section class="modal">
-        <div class="close">X</div>
-        <div class="container">
-          <div class="slide sizes">
-            <div class="wrapper" id="sizes">
-              <p id="testing"></p>
-              <article id="addbottle" data-container='bottle'>
-                <img src="/images/beer-pint.png" alt="">
-                <p>Add to order</p>
-              </article>
-              <!-- <p>OR</p>
-                <article id="addglass" data-container='pint'>
-                  <img src="/beer.png" alt="">
-                  <p>Tap</p>
-                </article> -->
-            </div>
-          </div>
-          <!-- This comment removes the line break
-             -->
-          <!-- <div class="slide variant">
-              <div class="wrapper" id="variant">
-              <article>
-                <img id="addglass" src="/beer.png" alt="">
-                <p>Glass (0,5L)</p>
-              </article>
-              <article id="addpitcher">
-                <img src="/beer.png" alt="">
-                <p>Pitcher (1,5L)</p>
-              </article>
-            </div>
-            </div> -->
 
-        </div>
-      </section>
-    </div>
 
   </div>
 
@@ -100,8 +66,8 @@
 
 
 
-  <script type="module" src="/menu.js"></script>
-  <script type="module" src="./index.js"></script>
+  <script type="module" src="./js/menu.js"></script>
+  <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>

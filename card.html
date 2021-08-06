@@ -12,35 +12,40 @@
 
   <div id="app">
 
-    <main class="start">
+    <main class="start credit-card">
+      <div class="container">
+        <h1>Credit Card</h1>
 
-      <h1>Fill in the credit card information</h1>
+        <form autocomplete="on">
 
-      <form autocomplete="on">
+          <div class="set">
+            <label>Card Number</label> <input type="text" id="cardNumber" placeholder="Number of card" required />
+          </div>
 
-        <p><label>Credit card number (required) <input type="text" id="cardNumber" required/> </label></p>
+          <div class="set">
+            <label>Security code</label><input type="text" id="security-code" placeholder="Security code" required />
+          </div>
 
-        <p><label>Expiry date (required)<input type="text" id="date" /></label></p>
+          <div class="set">
+            <label>Full Name</label><input type="text" id="full-name" placeholder="Full name" required />
+          </div>
 
-        <p><label>Credit card security code (required) <input type="text" id="security-code" /> </label></p>
+          <div class="set">
+            <label>Expiration date</label><input type="text" id="date" placeholder="Month/Year" required />
+          </div>
 
-        <button id="submit-button">Submit</button>
+          <input type="submit" value="Pay">
 
-        <input type="submit">
-      </form>
-
-
-
+        </form>
+      </div>
 
     </main>
 
   </div>
 
+  <script type="module" src="./js/main.js"></script>
+  <script type="module" src="./js/card.js"></script>
 
-
-
-  <script type="module" src="./index.js"></script>
-  <script type="module" src="./card.js"></script>
 </body>
 
 </html>

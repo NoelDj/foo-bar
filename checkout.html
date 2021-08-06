@@ -12,8 +12,10 @@
     <div id="app">
 
         <header>
-            <img alt="" src="images/malt-icon.png">
+            <img alt="" src="images/decorations/malt-icon.png">
             <h1>Checkout</h1>
+
+            <a href="/menu.html">Back</a>
         </header>
 
 
@@ -22,8 +24,6 @@
             <section>
 
             </section>
-            <img alt="" src="images/hops-leafs.png">
-            <a href="/">Back</a>
         </main>
 
         <template>
@@ -47,10 +47,13 @@
 
 
         <footer>
-            <nav id="orders">
-                <h2>TOTAL:</h2>
-                <p class="total">0</p>
-                <a href="/payment.html">Pay</a>
+            <nav id="orders" class="checkout-list">
+                <p>TOTAL: <strong class="total">0</strong> DKK </p>
+                <br>
+                <div class="pay-links">
+                <a class="pay-button" href="/card.html">Pay (Credit Card)</a>
+                <a class="pay-button" href="/completed.html">Pay (Cash)</a>
+            </div>
             </nav>
         </footer>
 
@@ -58,8 +61,8 @@
 
     </div>
 
-    <script type="module" src="./index.js"></script>
-    <script type="module" src="./checkout.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/checkout.js"></script>
 </body>
 
 </html>
