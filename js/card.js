@@ -13,7 +13,6 @@ var cleave = new Cleave('#date', {
 });
 
 var cleave = new Cleave('#security-code', {
-
   numericOnly: true,
   blocks: [4]
 });

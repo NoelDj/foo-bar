@@ -1,8 +1,4 @@
 "use strict";
-import Swal from 'sweetalert2/dist/sweetalert2.js'
-
-import 'sweetalert2/src/sweetalert2.scss'
-
 
 window.addEventListener("DOMContentLoaded", init);
 
@@ -64,11 +60,13 @@ function handleObject(object) {
 
   switch (object.category) {
     case "European Lager":
+    object.price = 70;
+    break;
     case "IPA":
-      object.price = 10;
-      break;
+    object.price = 40;
+    break;
     default:
-      object.price = 20;
+    object.price = 50;
   }
 
   return object;
@@ -84,7 +82,8 @@ function appendProducts(product) {
   copy.querySelector(".description").textContent =
     product.description.appearance;
 
-  copy.querySelector("img").src = "/images/beers-compressed/" + product.label;
+  copy.querySelector("img").src = "https://quater.org/pictures/" + product.label;
+  copy.querySelector("#product-price").textContent = product.price + " DKK";
   copy.querySelector("button").addEventListener("click", () => {
     check(product)
   });
@@ -114,7 +113,7 @@ function addItem(item) {
   listItem.id = item.name;
 
   const img = document.createElement("img");
-  img.src = "/images/beers-compressed/" + item.label;
+  img.src = "https://quater.org/pictures/" + item.label;
   listItem.appendChild(img);
 
   document.querySelector("#ordered-items").appendChild(listItem);

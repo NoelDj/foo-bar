@@ -71,7 +71,7 @@ function appendProducts(product) {
     product.name + " " + product.size + " " + product.container;
   copy.querySelector(".price").textContent = product.price * product.amount + " DKK";
 
-  copy.querySelector("img").src = "/images/beers-compressed/" + product.label;
+  copy.querySelector("img").src = "https://quater.org/pictures/" + product.label;
   copy.querySelector(".orders").textContent = product.amount;
 
   if (product.amount == 1) {
@@ -90,7 +90,7 @@ function appendProducts(product) {
             console.log(product);
             product.amount++;
           } else {
-            alert("Out of stock")
+            alert("Not any more beer left of this kind.")
           }
         }
 
@@ -102,7 +102,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            alert("Out of stock")
+            alert("Not any more beer left of this kind.")
           }
         }
         if (product.name === "GitHop") {
@@ -113,7 +113,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            alert("Out of stock")
+            alert("Not any more beer left of this kind.")
           }
         }
         if (product.name === "Hollaback Lager") {
@@ -124,7 +124,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            alert("Out of stock")
+            alert("Not any more beer left of this kind.")
           }
         }
         if (product.name === "Hoppily Ever After") {
@@ -135,7 +135,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            alert("Out of stock")
+            alert("Not any more beer left of this kind.")
           }
         }
         if (product.name === "Mowintime") {
@@ -146,7 +146,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            alert("Out of stock")
+            alert("Not any more beer left of this kind.")
           }
         }
         if (product.name === "Row 26") {
@@ -157,7 +157,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            alert("Out of stock")
+            alert("Not any more beer left of this kind.")
           }
         }
         if (product.name === "Ruined Childhood") {
@@ -168,7 +168,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            alert("Out of stock")
+            alert("Not any more beer left of this kind.")
           }
         }
         if (product.name === "Sleighride") {
@@ -179,7 +179,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            alert("Out of stock")
+            alert("Not any more beer left of this kind.")
           }
         }
         if (product.name === "Steampunk") {
@@ -190,7 +190,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            alert("Out of stock")
+            alert("Not any more beer left of this kind.")
           }
         }
       } else if (product.amount > 1) {
