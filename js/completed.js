@@ -7,6 +7,7 @@ const listOfOrders = [];
 function init() {
   loadOrders();
   getOrders();
+  createOrderNumber()
 }
 
 function loadOrders() {
@@ -47,7 +48,6 @@ function sendOrders() {
     .then((dataPost) => {
       console.log(dataPost);
       console.log(dataPost.id);
-      document.querySelector("#ordernumber > span").textContent = dataPost.id;
     });
 }
 
@@ -55,4 +55,12 @@ function getOrders() {
   fetch("https://foobardata.herokuapp.com/")
     .then((r) => r.json())
     .then((data) => console.log(data));
+}
+
+function createOrderNumber() {
+
+  const orderNumber = Math.floor(Math.random() * 100);
+
+  document.querySelector('#order-number').textContent = orderNumber;
+
 }

@@ -13,7 +13,7 @@ let steampunkbottle = 0;
 
 window.addEventListener("DOMContentLoaded", init);
 
-const orderedItems = [];
+let orderedItems = [];
 function init() {
   loadData();
   selectDomElements();
@@ -69,9 +69,9 @@ function appendProducts(product) {
   // console.log(product);
   copy.querySelector(".name").textContent =
     product.name + " " + product.size + " " + product.container;
-  copy.querySelector(".price").textContent =
-    product.price * product.amount + " DKK";
-  copy.querySelector("img").src = "/images/" + product.label;
+  copy.querySelector(".price").textContent = product.price * product.amount + " DKK";
+
+  copy.querySelector("img").src = "https://quater.org/pictures/" + product.label;
   copy.querySelector(".orders").textContent = product.amount;
 
   if (product.amount == 1) {
@@ -90,9 +90,7 @@ function appendProducts(product) {
             console.log(product);
             product.amount++;
           } else {
-            console.log(
-              " TODO  - stuff that happens when you order too much el hefe bottles "
-            );
+            alert("Not any more beer left of this kind.")
           }
         }
 
@@ -104,9 +102,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            console.log(
-              " TODO  - stuff that happens when you order too much fairy tale bottles "
-            );
+            alert("Not any more beer left of this kind.")
           }
         }
         if (product.name === "GitHop") {
@@ -117,9 +113,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            console.log(
-              " TODO  - stuff that happens when you order too much githop bottles "
-            );
+            alert("Not any more beer left of this kind.")
           }
         }
         if (product.name === "Hollaback Lager") {
@@ -130,9 +124,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            console.log(
-              " TODO  - stuff that happens when you order too much Hollaback bottles "
-            );
+            alert("Not any more beer left of this kind.")
           }
         }
         if (product.name === "Hoppily Ever After") {
@@ -143,9 +135,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            console.log(
-              " TODO  - stuff that happens when you order too much hoppilyeverafter bottles "
-            );
+            alert("Not any more beer left of this kind.")
           }
         }
         if (product.name === "Mowintime") {
@@ -156,9 +146,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            console.log(
-              " TODO  - stuff that happens when you order too much mowintime bottles "
-            );
+            alert("Not any more beer left of this kind.")
           }
         }
         if (product.name === "Row 26") {
@@ -169,9 +157,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            console.log(
-              " TODO  - stuff that happens when you order too much row26 bottles "
-            );
+            alert("Not any more beer left of this kind.")
           }
         }
         if (product.name === "Ruined Childhood") {
@@ -182,9 +168,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            console.log(
-              " TODO  - stuff that happens when you order too much ruinedchildhood bottles "
-            );
+            alert("Not any more beer left of this kind.")
           }
         }
         if (product.name === "Sleighride") {
@@ -195,9 +179,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            console.log(
-              " TODO  - stuff that happens when you order too much sleighride bottles "
-            );
+            alert("Not any more beer left of this kind.")
           }
         }
         if (product.name === "Steampunk") {
@@ -208,9 +190,7 @@ function appendProducts(product) {
             product.amount++;
             console.log(product);
           } else {
-            console.log(
-              " TODO  - stuff that happens when you order too much steampunk bottles"
-            );
+            alert("Not any more beer left of this kind.")
           }
         }
       } else if (product.amount > 1) {

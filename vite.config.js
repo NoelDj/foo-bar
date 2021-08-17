@@ -6,11 +6,11 @@ base: "./",
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        menu: resolve(__dirname, 'menu.html'),
+        completed: resolve(__dirname, 'completed.html'),
         card: resolve(__dirname, 'card.html'),
-        checkout: resolve(__dirname, 'checkout.html'),
-        payment: resolve(__dirname, 'payment.html')
+        index: resolve(__dirname, 'index.html'),
+        menu: resolve(__dirname, 'menu.html'),
+        checkout: resolve(__dirname, 'checkout.html')
       }
     }
   }

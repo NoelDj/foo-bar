@@ -16,31 +16,6 @@ function handleBeerData(data) {
   console.log(data);
 }
 
-// function loadTaps() {
-//   fetch("https://foobarexamproject.herokuapp.com/")
-//     .then((response) => response.json())
-//     .then((jsonData) => {
-//       beerStocks(jsonData);
-//     });
-// }
-// function beerStocks(jsonData) {
-//   console.log(jsonData.taps);
-//   let kegsarray = jsonData.taps;
-//   kegsarray.forEach((product) => appendkeg(product));
-// }
-
-// function appendkeg(product) {
-//   const copy = document.querySelector("#taptemplate").content.cloneNode(true);
-//   // console.log(copy);
-//   copy.querySelector(".name").textContent = product.beer;
-//   copy.querySelector("img").src = "/images/" + product.beer;
-//   document.querySelector(".menu #taps").appendChild(copy);
-//   document.querySelectorAll(".addtap").forEach((item) => {
-//     item.addEventListener("click", (event) => {
-//       addGlass(e);
-//     });
-//   });
-// }
 
 function addGlass(e) {
   console.log("tap beer addeddddd");
@@ -85,11 +60,13 @@ function handleObject(object) {
 
   switch (object.category) {
     case "European Lager":
+    object.price = 70;
+    break;
     case "IPA":
-      object.price = 10;
-      break;
+    object.price = 40;
+    break;
     default:
-      object.price = 20;
+    object.price = 50;
   }
 
   return object;
@@ -105,30 +82,15 @@ function appendProducts(product) {
   copy.querySelector(".description").textContent =
     product.description.appearance;
 
-  copy.querySelector("img").src = "/images/" + product.label;
-
+  copy.querySelector("img").src = "https://quater.org/pictures/" + product.label;
+  copy.querySelector("#product-price").textContent = product.price + " DKK";
   copy.querySelector("button").addEventListener("click", () => {
-    showModal(product);
-    document.querySelector("#testing").textContent = product.name;
+    check(product)
   });
   document.querySelector(".menu #bottles").appendChild(copy);
 }
 
-function showModal(product) {
-  document.querySelector(".overlay").style.display = "flex";
-  document.querySelector("#addbottle").addEventListener("click", (e) => {
-    addBottle(e);
-  });
 
-  function addBottle(e) {
-    const value = e.target.parentElement.dataset.container;
-    product.container = value;
-    console.log(product);
-    check(product);
-
-    // console.log(product.name);
-  }
-}
 
 function check(item) {
   if (!document.getElementById(item.name)) {
@@ -136,7 +98,7 @@ function check(item) {
     setPrice(item);
     addToList(item);
   } else {
-    console.log("exists");
+    alert("The beer has already been added")
   }
 }
 
@@ -151,7 +113,7 @@ function addItem(item) {
   listItem.id = item.name;
 
   const img = document.createElement("img");
-  img.src = "/images/" + item.label;
+  img.src = "https://quater.org/pictures/" + item.label;
   listItem.appendChild(img);
 
   document.querySelector("#ordered-items").appendChild(listItem);
@@ -176,11 +138,5 @@ function selectDomElements() {
     });
   });
 
-  document.querySelector(".close").addEventListener("click", () => {
-    // console.log(2);
-    document.querySelector(".overlay").style.display = "none";
-    document.querySelector("#addbottle").removeEventListener("click", (e) => {
-      addBottle(e);
-    });
-  });
+
 }
